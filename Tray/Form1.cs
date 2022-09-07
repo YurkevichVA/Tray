@@ -22,6 +22,7 @@ namespace Tray
         {
             if (WindowState == FormWindowState.Minimized)
             {
+                Visible = false;
                 notifyIcon1.Visible = true;
                 minResizeCount++;
                 notifyIcon1.Text = minResizeCount.ToString();
@@ -33,8 +34,9 @@ namespace Tray
         {
             if(WindowState == FormWindowState.Minimized)
             {
-                WindowState = FormWindowState.Normal;
+                WindowState = FormWindowState.Maximized;
                 notifyIcon1.Visible = false;
+                Visible = true;
             }
         }
     }
